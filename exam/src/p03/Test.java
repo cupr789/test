@@ -1,5 +1,7 @@
 package p03;
 
+import java.util.Scanner;
+
 public class Test {
 
 	String str;
@@ -9,27 +11,50 @@ public class Test {
 	}
 
 	public static void main(String[] args) {
-		Test t = new Test();
+/*		Test t = new Test();
 
 		t.print("");
 
-		String str1 = "안녕하십니다 윤재형입니다! 반갑습니다!";
-	
-		int count =0;
-		int index =0;
-		int temp = 0;
-			System.out.println(str1);
-			for(int i=0; i<10; i++) {
-				index = str1.indexOf("다");
-				temp += index;
-				System.out.println("temp값은 ? "+temp);
-				
-			
-				if(index==-1) {
-					break;
-				}
-				
-			}
+		String str1 = "다";
 		
+		int count = 0;
+		int index = 0;
+		int temp = 0;
+		String strTemp = str1;
+		System.out.println(str1);
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String inputStr = sc.nextLine();
+		
+		
+		
+		for (int i = 0; i <= count; i++) {
+
+			if(strTemp.indexOf(inputStr)!=-1) {
+			index = strTemp.indexOf(inputStr);
+			count++;
+			}
+			else {
+				
+				break;
+			}
+			
+			strTemp = strTemp.substring(index + 1);
+			
+			System.out.println("");
+			
+			System.out.println((i+1)+"번째 ["+inputStr+"] 의 위치: "+(index+temp));
+			temp += (index+1);
+
+		}*/
+		
+		
+		ObjectExam oe = new ObjectExam();
+		oe.inputNums();
+		
+		Gugudan ggd = new Gugudan();
+		ggd.printLoop(oe);
+
 	}
 }

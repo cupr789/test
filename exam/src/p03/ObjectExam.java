@@ -8,12 +8,12 @@ public class ObjectExam {
 	int num1;
 	int num2;
 
-	ObjectExam() {
+/*	ObjectExam() {
 		System.out.println("기본 생성자를 호출하셨군요!");
 	}
 	ObjectExam(int num1) {
 		System.out.println("기본 생성자를 호출하셨군요!");
-	}
+	}*/
 
 	void add() {
 		num1=3;
@@ -32,12 +32,12 @@ public class ObjectExam {
 		this.num1 = sc.nextInt();
 		this.num2 = sc.nextInt();
 		
-		for(int i=num1;i<=num2;i++) {
+		/*for(int i=num1;i<=num2;i++) {
 			System.out.print(i);
 			if(i!=num2) {
 				System.out.print(",");
 			}
-		}
+		}*/
 		sc.close();
 	}
 	

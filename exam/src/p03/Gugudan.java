@@ -3,9 +3,9 @@ package p03;
 public class Gugudan {
 
 	void printLoop(ObjectExam oe) {
-		for (int x = 1; x <= 9; x++) {
+		for (int x = 1; x <= oe.num1; x++) {
 			
-			for (int y = 1; y <= 9; y++) {
+			for (int y = 1; y <= oe.num2; y++) {
 				
 				System.out.print("["+ x + ","+y+"]");
 			}
