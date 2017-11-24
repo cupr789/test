@@ -15,19 +15,19 @@ public class ObjectExam {
 		System.out.println("기본 생성자를 호출하셨군요!");
 	}*/
 
-	void add() {
+	public void add() {
 		num1=3;
 		System.out.println("둘의 합은 " + (num1 + num2));
 		System.out.println("add()함수 호출했구나");
 	}
 	
-	int getNum2() {
+	public int getNum2() {
 		num2=3;
 		int num2 =4;
 		return this.num2;
 	}
 	
-	void inputNums() {
+	public void inputNums() {
 		Scanner sc = new Scanner(System.in);
 		this.num1 = sc.nextInt();
 		this.num2 = sc.nextInt();
@@ -41,7 +41,7 @@ public class ObjectExam {
 		sc.close();
 	}
 	
-	void printLoop() {
+	public void printLoop() {
 		Scanner sc = new Scanner(System.in);
 		this.num1 = sc.nextInt();
 		this.num2 = sc.nextInt();

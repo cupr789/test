@@ -6,7 +6,7 @@ public class Test {
 
 	String str;
 
-	void print(String str) {
+	public void print(String str) {
 		System.out.println(str);
 	}
 
