@@ -1,7 +1,7 @@
 package p06;
 
 public class Exam01 {
-
+	
 	public static void main(String[] args) {
 		int temp = 0;
 		for (int i = 9; i >= 1; i--) {
