@@ -13,13 +13,15 @@ public class Lotto {
 	Scanner sc = new Scanner(System.in);
 
 	public Lotto() {
-
+		
+		this(6);
 		this.comLotto = new int[6];
 		this.lottoMaxNum = 45;
 
 	}
 
 	public Lotto(int lottoMaxNum) {
+		System.out.println("디스 6");
 		this.comLotto = new int[lottoMaxNum];
 	}
 
@@ -108,7 +110,7 @@ public class Lotto {
 		
 	}
 	public static void main(String[] args) {
-
+		Lotto lt = new Lotto();
 /*		Lotto ex1 = new Lotto();
 		Lotto ex = new Lotto(5, 5);
 		//ex.lottoMaxNum = 2;

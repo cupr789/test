@@ -2,7 +2,15 @@ package p09;
 
 import java.util.Random;
 
-public class ForRandomExam {
+import p10.Excute;
+import p10.SonOfSon;
+
+public class ForRandomExam extends SonOfSon{
+
+	ForRandomExam(int num1, int num2) {
+		super(num1, num2);
+		// TODO Auto-generated constructor stub
+	}
 
 	int[][] arr = new int[3][3];
 	int[] rdArr = new int[9];
@@ -81,14 +89,18 @@ public class ForRandomExam {
 		// 0번째층의 0번째 방부터 큰수가 들어갈 수 있도록 프로그램을 만들어서 출력해주세요.
 		// 중복불가
 
-		ForRandomExam fre = new ForRandomExam();
+		ForRandomExam fre = new ForRandomExam(1,30);
 
 		fre.initRdNums(); // rdArr배열을 랜덤값으로 초기화하는 함수 (중복제거X)
 		fre.rdNumCheck(); // 초기화가 된 rdArr배열에서 중복값 제거하는 함수 (중복제거O)
 		fre.sortNum(); // rdArr배열의 값들을 내림차순으로 정렬하는 함수
 		fre.inputArr(); // 최종 출력배열인 3 X 3 배열 arr에 rdArr배열값 입력하는 함수
 		fre.print(); // 최종배열 arr 출력
-
+		SonOfSon sos = new SonOfSon(1, 30);
+		SonOfSon sos1 = new ForRandomExam(1, 30);
+		SonOfSon sos23 = (ForRandomExam)sos;
+		
+		
 	}
 
 }
