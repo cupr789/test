@@ -7,28 +7,61 @@ import java.util.Scanner;
 public class ListExam {
 	Scanner sc = new Scanner(System.in);
 	Random r = new Random();
-	void initAndCheck(ArrayList<Integer> list, int flag) {
+
+	public void initAndCheck(ArrayList<Integer> list, int flag) {
 		int zeroOrOne = 0;
-		int partNum=0;
+		int partNum = 0;
 		int n = 0;
-	
+		int halfAuto=0;
 		for (int i = 0; i < 6; i++) {
+			
 			if (flag == 1 || flag == 3) {
-				n = r.nextInt(10) + 1;
-			} else if (flag == 2) {
+				 
+					if(flag==3) {
+						
+						for(int x=0;x<i;x++) {
+							n = r.nextInt(45) + 1;
+							if (list.indexOf(n) == -1) {
+								
+								list.add(n);
+							}
+							else {
+								
+								x--;
+							}
+						}
+						
+						flag=2;
+						zeroOrOne=1;
+						i=5-halfAuto;
+						partNum = 2;
+						continue;
+					}
+					
+					else {						
+						n = r.nextInt(45) + 1;
+					}
+			} 
+			
+			else if (flag == 2) {
 				if (zeroOrOne == 0) {
-					System.out.println(" 1: 자동숫자 , 2: 수동숫자");
+					System.out.println(" 1: 자동숫자 , 2: 수동숫자,3 : 반자동숫자");
 					partNum = sc.nextInt();
 					zeroOrOne++;
 				}
 				if (partNum == 1) {
 					flag = 1;
 					i = 0;
-					//list.clear();
+					// list.clear();
 					continue;
 				} else if (partNum == 2) {
 					System.out.println((i + 1) + "번째 숫자를 입력해주세요");
 					n = sc.nextInt();
+				} else if (partNum == 3) {
+					System.out.println("반자동 입력모드 입니다. 몇개를 수동으로 하시겠습니까?");
+					halfAuto = sc.nextInt();
+					i = (5 - halfAuto);
+					flag = 3;
 				}
 			}
 
@@ -43,6 +76,7 @@ public class ListExam {
 
 		}
 	}
+	
 
 	int finalCheck(ArrayList<Integer> list1, ArrayList<Integer> list2) {
 		int lottoCount = 0;
@@ -70,7 +104,12 @@ public class ListExam {
 
 		case 2:
 			System.out.print("내 숫자: ");
+		/*	int l = 0;
+			if(flag==3) {
+				l=1;
+			}*/
 			for (int i = 0; i < list2.size(); i++) {
+			
 				System.out.print(list2.get(i) + ", ");
 			}
 			System.out.println("");
