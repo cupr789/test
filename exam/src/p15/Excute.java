@@ -69,10 +69,6 @@ public class Excute {
 		for(User u : userList) {
 			System.out.println(u);
 		}
-		
-		 
-
-		
 
 	}
 }
