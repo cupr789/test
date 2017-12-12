@@ -13,27 +13,6 @@ public class Excute {
 		}
 
 		
-/*		for (User user : userList) {
-			System.out.println(user);
-		}
-
-		User ru = new User(3);
-		c.get("remove", ru);
-
-		for (User user : userList) {
-			System.out.println(user);
-		}
-		
-		
-		ru.setName("이름1");
-		userList = c.get("search", ru);
-		//c.get("add", ru);
-		System.out.println("검색결과");
-		
-		for (User user : userList) {
-			System.out.println(user);
-		}
-		*/
 		User user = new User("모모",20,2);
 		c.get("update", user);
 		for(User u : userList) {
