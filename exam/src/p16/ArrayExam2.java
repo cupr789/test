@@ -10,8 +10,11 @@ public class ArrayExam2 {
 			위의 결과가 올바르게 나올수 있도록 코딩작성*/
 	public static void main(String[] args) {
 		ArrayExam ae = new ArrayExam();
-		ArrayList al = new ArrayList<>();
-		al = ae.getArrayList(0, 9);
-		System.out.println(al);
+    	ArrayList al = ae.getArrayList(0, 9);
+       for(int i=0;i<10;i++){
+    	   al.add(i);
+       }
+       System.out.println(al);
+
 	}
 }

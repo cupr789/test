@@ -1,44 +1,17 @@
 package p16;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
 
 import com.google.common.collect.Lists;
 
 public class Exam {
 	
-	/*1. 총 5명의 학생의 점수를  Scanner클래스의 nextLine()함수를 사용하여 입력받아 총점과 평균을 구하고
-	점수가 낮은 순서대로 출력
-	ex) 입력 순서가 50점 60점 30점 70점 100 점이었다면 30,50,60,70,100 점수가 낮은대로*/
-	
-	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		Integer[] nums = {1,2,3,4,5};
-		for(int i=0; i<5; i++) {
-			System.out.println((i+1)+"번째 학생 점수 입력");
-			nums[i]= Integer.parseInt(sc.nextLine());
-		}
-
-		ArrayList<Integer> numList = Lists.newArrayList(nums);
-
-		
-/*		Comparator comparator = Collections.reverseOrder();
-		
-		Collections.sort(numList,comparator);
-		
-		//Collections.sort(numList);
-		
-		System.out.println(numList);*/
-
-		
+	public void sort(ArrayList<Integer> list) {
+		ArrayList<Integer> numList = list; 
 		int min=numList.get(0);
 		int idx=0;
 		ArrayList<Integer> tempList = new ArrayList<Integer>();
-		
-		// 20 60 10 40 100
 		
 		for(int i=0; i<numList.size(); i++) {
 			
@@ -69,10 +42,56 @@ public class Exam {
 			else {
 				System.out.print(a+",");
 			}
-			
-			
 		}
 		
+	}
 	
+	public static void main(String[] args) {
+			Exam e = new Exam();
+		Scanner sc = new Scanner(System.in);
+		
+		
+		ArrayList<Integer> totalList = new ArrayList<Integer>();
+		ArrayList<Integer> avgList = new ArrayList<Integer>();
+		
+		int total=0;
+		ArrayList<Integer> firstList = new ArrayList<Integer>();
+		for(int x=0; x<5; x++) {
+			 firstList = new ArrayList<Integer>();
+			for(int i=0; i<5; i++) {
+				System.out.println((x+1)+"번째 학생 "+(i+1)+"과목 점수 입력");
+				firstList.add(Integer.parseInt(sc.nextLine()));
+			}
+			for(int y=0; y<5;y++) {
+				 total += firstList.get(y).intValue();
+			}
+			System.out.println((x+1)+"번째 학생 입력점수 오름차순");
+			e.sort(firstList);
+			System.out.println("");
+			totalList.add(total);
+			avgList.add(total/5);
+			total=0;
+		}
+		sc.close();
+		int cnt =1;
+		for(Integer a1: totalList) {
+			System.out.println(cnt+"번째 학생 총점: "+a1);
+			cnt++;
+		}
+		System.out.println("");
+		cnt =1;
+		for(Integer a1: avgList) {
+			System.out.println(cnt+"번째 학생 평균: "+a1);
+			cnt++;
+		}
+		System.out.println("");
+		System.out.println("총점을 오름차순");
+		e.sort(totalList);
+		System.out.println("");
+		System.out.println("평균을 오름차순");
+		e.sort(avgList);
+		
+		
+		
 	}
 }
