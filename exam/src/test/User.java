@@ -1,37 +1,39 @@
 package test;
 
 public class User {
-	private String id;
-	private String pwd;
-	private int level;
+	private String name;
+	private int age;
+	private int no;
 	
-	User(String id, String pwd, int level){
-		this.id = id;
-		this.pwd = pwd;
-		this.level = level;
+	
+	User(String name, int age, int no){
+		this.name = name;
+		this.age = age;
+		this.no = no;
 	}
-	
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", pwd=" + pwd + ", level=" + level + "]";
+		return "User [name=" + name + ", age=" + age + ", no=" + no + "]";
 	}
-
-	public String getId() {
-		return id;
+	
+	public String getName() {
+		return name;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getPwd() {
-		return pwd;
+	public int getAge() {
+		return age;
 	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setAge(int age) {
+		this.age = age;
 	}
-	public int getLevel() {
-		return level;
+	public int getNo() {
+		return no;
 	}
-	public void setLevel(int level) {
-		this.level = level;
+	public void setNo(int no) {
+		this.no = no;
 	}
+	
+	
 }
