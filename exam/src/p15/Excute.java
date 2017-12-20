@@ -7,11 +7,11 @@ public class Excute {
 	public static void main(String[] args) {
 		Controler c = new Controler();
 		ArrayList<User> userList = c.get("list", null);
+		
 		for (int i = 1; i <= 5; i++) {
 			User user = new User("이름" + i, i, i);
 			c.get("add", user);
 		}
-
 		
 		User user = new User("모모",20,2);
 		c.get("update", user);
